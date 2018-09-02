@@ -1,0 +1,2 @@
+[0m[[0m[31merror[0m] [0m[0mF:\pla\app1\kora\app\controllers\ReserveApi.java:19:1: non-static method reserveslot(metaData.ReserveData) cannot be referenced from a static context[0m
+[0m[[0m[31merror[0m] [0m[0m    reserveService. reserveslot(reg);[0m
