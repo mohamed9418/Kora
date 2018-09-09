@@ -1,2 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mF:\pla\app1\kora\app\controllers\ReserveApi.java:19:1: non-static method reserveslot(metaData.ReserveData) cannot be referenced from a static context[0m
-[0m[[0m[31merror[0m] [0m[0m    reserveService. reserveslot(reg);[0m
+[0m[[0m[31merror[0m] [0m[0mD:\pla\Kora\app\services\PlayerService.java:19:1:  error: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m    catch(DataIntegrityException e){[0m
+[0m[[0m[31merror[0m] [0m[0m          ^^  symbol:   class DataIntegrityException[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class PlayerService[0m

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:F:/pla/app1/kora/conf/routes
-// @DATE:Wed Aug 29 21:52:59 EET 2018
+// @SOURCE:D:/pla/Kora/conf/routes
+// @DATE:Mon Sep 03 10:38:55 EET 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
