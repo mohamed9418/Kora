@@ -29,14 +29,18 @@ public class playerApi extends Controller {
         player np=  serv.insertPlayeer(reg);
         ActiveService ac= new ActiveService();
         ObjectNode result = Json.newObject();
-        result.put("statue", "success");
-        Mail mail =new Mail();
-        Random rand=new Random();
-        int x=Math.abs(rand.nextInt());
-        ac.insertToactivate(x,np);
-        mail.setRecip(reg.email,String.valueOf(x));
-        mail.run();
-        result.put("email", "check your email");
+          if (np !=null){
+          result.put("statue", "success");
+          Mail mail =new Mail();
+          Random rand=new Random();
+          int x=Math.abs(rand.nextInt());
+          ac.insertToactivate(x,np);
+          mail.setRecip(reg.email,String.valueOf(x));
+          mail.run();
+          result.put("email", "check your email");
+        }
+        else
+        {result.put("statue", "failed: E mail already exist");}
         return ok(result);
     }
 

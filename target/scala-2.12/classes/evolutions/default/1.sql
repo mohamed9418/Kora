@@ -54,7 +54,7 @@ create table playground (
 create table reserved_slots (
   rid                           integer auto_increment not null,
   gid                           integer,
-  playerid                      integer,
+  pid                           integer,
   date                          datetime(6),
   starting                      time,
   finishing                     time,
@@ -104,8 +104,8 @@ create index ix_playground_cid on playground (cid);
 alter table reserved_slots add constraint fk_reserved_slots_gid foreign key (gid) references playground (gid) on delete restrict on update restrict;
 create index ix_reserved_slots_gid on reserved_slots (gid);
 
-alter table reserved_slots add constraint fk_reserved_slots_playerid foreign key (playerid) references player (pid) on delete restrict on update restrict;
-create index ix_reserved_slots_playerid on reserved_slots (playerid);
+alter table reserved_slots add constraint fk_reserved_slots_pid foreign key (pid) references player (pid) on delete restrict on update restrict;
+create index ix_reserved_slots_pid on reserved_slots (pid);
 
 alter table sessions add constraint fk_sessions_pid foreign key (pid) references player (pid) on delete restrict on update restrict;
 create index ix_sessions_pid on sessions (pid);
@@ -140,8 +140,8 @@ drop index ix_playground_cid on playground;
 alter table reserved_slots drop foreign key fk_reserved_slots_gid;
 drop index ix_reserved_slots_gid on reserved_slots;
 
-alter table reserved_slots drop foreign key fk_reserved_slots_playerid;
-drop index ix_reserved_slots_playerid on reserved_slots;
+alter table reserved_slots drop foreign key fk_reserved_slots_pid;
+drop index ix_reserved_slots_pid on reserved_slots;
 
 alter table sessions drop foreign key fk_sessions_pid;
 drop index ix_sessions_pid on sessions;
