@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:D:/pla/Kora/conf/routes
-// @DATE:Mon Sep 03 10:38:55 EET 2018
+// @SOURCE:D:/pla/Kora/Kora/conf/routes
+// @DATE:Sun Sep 09 16:11:55 EET 2018
 
 import play.api.mvc.Call
 

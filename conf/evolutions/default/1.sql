@@ -55,7 +55,7 @@ create table reserved_slots (
   rid                           integer auto_increment not null,
   gid                           integer,
   pid                           integer,
-  date                          datetime(6),
+  day                           date,
   starting                      time,
   finishing                     time,
   checked                       tinyint(1) default 0,
