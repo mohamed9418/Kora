@@ -1,7 +1,7 @@
 [0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
-[0m[[0m[0mdebug[0m] [0m[0m	(D:\pla\Kora\conf\application.conf,D:\pla\Kora\target\scala-2.12\classes\application.conf)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(D:\pla\Kora\conf\evolutions,D:\pla\Kora\target\scala-2.12\classes\evolutions)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(D:\pla\Kora\conf\evolutions\default,D:\pla\Kora\target\scala-2.12\classes\evolutions\default)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(D:\pla\Kora\conf\evolutions\default\1.sql,D:\pla\Kora\target\scala-2.12\classes\evolutions\default\1.sql)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(D:\pla\Kora\conf\logback.xml,D:\pla\Kora\target\scala-2.12\classes\logback.xml)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(D:\pla\Kora\conf\routes,D:\pla\Kora\target\scala-2.12\classes\routes)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(D:\pla\Kora\Kora\conf\application.conf,D:\pla\Kora\Kora\target\scala-2.12\classes\application.conf)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(D:\pla\Kora\Kora\conf\evolutions,D:\pla\Kora\Kora\target\scala-2.12\classes\evolutions)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(D:\pla\Kora\Kora\conf\evolutions\default,D:\pla\Kora\Kora\target\scala-2.12\classes\evolutions\default)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(D:\pla\Kora\Kora\conf\evolutions\default\1.sql,D:\pla\Kora\Kora\target\scala-2.12\classes\evolutions\default\1.sql)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(D:\pla\Kora\Kora\conf\logback.xml,D:\pla\Kora\Kora\target\scala-2.12\classes\logback.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(D:\pla\Kora\Kora\conf\routes,D:\pla\Kora\Kora\target\scala-2.12\classes\routes)[0m

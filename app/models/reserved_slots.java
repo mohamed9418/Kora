@@ -1,8 +1,9 @@
 package models;
 
-import java.util.*;
-import java.time.LocalTime;
+import java.sql.Date;
+import java.sql.Time;
 import javax.persistence.*;
+import java.util.ArrayList;
 
 import io.ebean.*;
 
@@ -16,9 +17,9 @@ public class reserved_slots extends Model{
 			@ManyToOne
 			@JoinColumn(name = "PID")
 			public player rPlayer;
-			public Date date;
-			public LocalTime starting;
-			public LocalTime finishing;
+			public Date day;
+			public Time starting;
+			public Time finishing;
 			public Boolean checked;
 			@OneToMany(mappedBy = "slots")
 			public ArrayList<challenges> ch = new ArrayList<challenges>();

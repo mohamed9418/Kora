@@ -2,7 +2,10 @@ package services;
 
 import metaData.*;
 import models.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Random;
+import java.sql.Time;
+import java.sql.Date;
 public class reserveService{
 
   public void reserveslot(ReserveData data){
@@ -13,9 +16,12 @@ public class reserveService{
     r.RID=Math.abs(rand.nextInt());
     r.pg=p;
     r.rPlayer=s.p;
-    r.date=data.day;
-    r.starting=data.starting;
-    r.finishing=data.finishing;
+    r.day=data.day;
+    System.out.println(data.starting);
+    r.starting=Time.valueOf(data.starting);
+    System.out.println(r.starting);
+    r.finishing=Time.valueOf(data.finishing);
+    System.out.println(r.finishing);
     r.checked=false;
     r.save();
   }
