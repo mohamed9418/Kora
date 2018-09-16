@@ -11,10 +11,10 @@ public class team_members extends Model{
 			@JoinColumn(name = "TID")
 			public teams team;
 			@ManyToOne
-			@JoinColumn(name = "PlayerID")
+			@JoinColumn(name = "PID")
 			public player play;
 			public String role;
 			public Boolean c_acceptance;
-			public Boolean p_acceptance;
+			public Boolean p_acceptence;
 			public static final Finder<Integer, team_members> find = new Finder<>(team_members.class);
 }

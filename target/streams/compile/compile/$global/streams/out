@@ -1,8 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mD:\pla\Kora\Kora\app\services\reserveService.java:14:1:  error: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m    Random rand=new Random();[0m
-[0m[[0m[31merror[0m] [0m[0m    ^^  symbol:   class Random[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class reserveService[0m
-[0m[[0m[31merror[0m] [0m[0mD:\pla\Kora\Kora\app\services\reserveService.java:14:1:  error: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m    Random rand=new Random();[0m
-[0m[[0m[31merror[0m] [0m[0m                    ^^  symbol:   class Random[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class reserveService[0m
+[0m[[0m[31merror[0m] [0m[0mD:\pla\Kora\Kora\app\services\teamServices.java:30:1: cannot find symbol[0m
+[0m[[0m[31merror[0m] [0m[0m  symbol:   class DataIntegrityException[0m
+[0m[[0m[31merror[0m] [0m[0m  location: class services.teamServices[0m
+[0m[[0m[31merror[0m] [0m[0m  catch(DataIntegrityException e){[0m
