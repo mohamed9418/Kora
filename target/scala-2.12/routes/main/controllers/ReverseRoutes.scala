@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:D:/pla/Kora/Kora/conf/routes
-// @DATE:Sun Sep 09 16:11:55 EET 2018
+// @DATE:Sun Sep 16 13:09:41 EET 2018
 
 import play.api.mvc.Call
 
@@ -11,17 +11,32 @@ import _root_.play.libs.F
 // @LINE:6
 package controllers {
 
-  // @LINE:12
+  // @LINE:13
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:12
+    // @LINE:13
     def versioned(file:Asset): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))
+    }
+  
+  }
+
+  // @LINE:11
+  class ReverseteamsApi(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:11
+    def newTeam(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "api/newTeam")
     }
   
   }

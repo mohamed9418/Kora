@@ -72,10 +72,10 @@ create table sessions (
 
 create table team_members (
   tid                           integer,
-  playerid                      integer,
+  pid                           integer,
   role                          varchar(255),
   c_acceptance                  tinyint(1) default 0,
-  p_acceptance                  tinyint(1) default 0
+  p_acceptence                  tinyint(1) default 0
 );
 
 create table teams (
@@ -113,8 +113,8 @@ create index ix_sessions_pid on sessions (pid);
 alter table team_members add constraint fk_team_members_tid foreign key (tid) references teams (tid) on delete restrict on update restrict;
 create index ix_team_members_tid on team_members (tid);
 
-alter table team_members add constraint fk_team_members_playerid foreign key (playerid) references player (pid) on delete restrict on update restrict;
-create index ix_team_members_playerid on team_members (playerid);
+alter table team_members add constraint fk_team_members_pid foreign key (pid) references player (pid) on delete restrict on update restrict;
+create index ix_team_members_pid on team_members (pid);
 
 alter table teams add constraint fk_teams_cid foreign key (cid) references city (cid) on delete restrict on update restrict;
 create index ix_teams_cid on teams (cid);
@@ -149,8 +149,8 @@ drop index ix_sessions_pid on sessions;
 alter table team_members drop foreign key fk_team_members_tid;
 drop index ix_team_members_tid on team_members;
 
-alter table team_members drop foreign key fk_team_members_playerid;
-drop index ix_team_members_playerid on team_members;
+alter table team_members drop foreign key fk_team_members_pid;
+drop index ix_team_members_pid on team_members;
 
 alter table teams drop foreign key fk_teams_cid;
 drop index ix_teams_cid on teams;

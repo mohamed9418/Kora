@@ -55,7 +55,7 @@ create table reserved_slots (
   rid                           integer auto_increment not null,
   gid                           integer,
   pid                           integer,
-  day                           datetime(6),
+  day                           date,
   starting                      time,
   finishing                     time,
   checked                       tinyint(1) default 0,
@@ -75,7 +75,7 @@ create table team_members (
   playerid                      integer,
   role                          varchar(255),
   c_acceptance                  tinyint(1) default 0,
-  p_acceptance                  tinyint(1) default 0
+  p_acceptence                  tinyint(1) default 0
 );
 
 create table teams (
