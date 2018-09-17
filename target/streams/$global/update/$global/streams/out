@@ -1,2 +1,16 @@
 [0m[[0m[31merror[0m] [0m[0mjava.io.FileNotFoundException: D:\pla\Kora\Kora\target\streams\$global\update\$global\streams\update_cache_2.12\output (The requested operation cannot be performed on a file with a user-mapped section open)[0m
 [0m[[0m[31merror[0m] [0m[0m	at java.io.FileOutputStream.open0(Native Method)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.io.FileOutputStream.open(FileOutputStream.java:270)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.io.FileOutputStream.<init>(FileOutputStream.java:213)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.io.Using$.$anonfun$fileOutputStream$1(Using.scala:86)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.io.Using$$$Lambda$1953/758535811.apply(Unknown Source)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.io.Using$$anon$2.openImpl(Using.scala:76)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.io.OpenFile.open(Using.scala:43)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.io.OpenFile.open$(Using.scala:39)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.io.Using$$anon$2.open(Using.scala:75)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.io.Using$$anon$2.open(Using.scala:75)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.io.Using.apply(Using.scala:21)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.util.FileBasedStore.write(CacheStore.scala:72)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.util.Tracked$.$anonfun$lastOutput$1(Tracked.scala:69)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.util.Tracked$$$Lambda$1932/127467763.apply(Unknown Source)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$19(LibraryManagement.scala:112)[0m
