@@ -1,2 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0mjava.io.FileNotFoundException: D:\pla\Kora\Kora\target\streams\$global\update\$global\streams\update_cache_2.12\output (The requested operation cannot be performed on a file with a user-mapped section open)[0m
-[0m[[0m[31merror[0m] [0m[0m	at java.io.FileOutputStream.open0(Native Method)[0m

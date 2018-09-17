@@ -18,11 +18,9 @@ public class reserveService{
     r.rPlayer=s.p;
     r.day=data.day;
     System.out.println(data.starting);
-    r.starting=Time.valueOf(data.starting);
-    System.out.println(r.starting);
-    r.finishing=Time.valueOf(data.finishing);
-    System.out.println(r.finishing);
-    r.checked=false;
+    r.start_at=data.starting;
+    r.finish_at=data.finishing;
+    r.checked=0;
     r.save();
   }
 }

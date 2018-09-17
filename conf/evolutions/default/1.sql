@@ -55,10 +55,10 @@ create table reserved_slots (
   rid                           integer auto_increment not null,
   gid                           integer,
   pid                           integer,
-  day                           date,
-  starting                      time,
-  finishing                     time,
-  checked                       tinyint(1) default 0,
+  day                           varchar(255),
+  start_at                      varchar(255),
+  finish_at                     varchar(255),
+  checked                       integer not null,
   constraint pk_reserved_slots primary key (rid)
 );
 

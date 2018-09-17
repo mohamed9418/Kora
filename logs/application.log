@@ -1,9 +1,9 @@
-2018-09-16 14:12:00,125 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-5 - Database [default] initialized at jdbc:mysql://localhost/app1mvp
-2018-09-16 14:12:00,139 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-5 - Creating Pool for datasource 'default'
-2018-09-16 14:12:01,026 [WARN] from io.ebeaninternal.server.deploy.BeanDescriptorManager in play-dev-mode-akka.actor.default-dispatcher-5 - Bean [models.team_members] has no unique id set
-2018-09-16 14:12:01,291 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-5 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2018-09-17 11:50:19,481 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-4 - Database [default] initialized at jdbc:mysql://localhost/app1mvp
+2018-09-17 11:50:19,497 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
+2018-09-17 11:50:20,644 [WARN] from io.ebeaninternal.server.deploy.BeanDescriptorManager in play-dev-mode-akka.actor.default-dispatcher-4 - Bean [models.team_members] has no unique id set
+2018-09-17 11:50:20,952 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-4 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2018-09-16 14:12:01,463 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-5 - Application started (Dev)
+2018-09-17 11:50:21,112 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-4 - Application started (Dev)
