@@ -1,8 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0mD:\pla\Kora\Kora\app\services\reserveService.java:22:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   variable starting[0m
-[0m[[0m[31merror[0m] [0m[0m  location: variable r of type models.reserved_slots[0m
-[0m[[0m[31merror[0m] [0m[0m    System.out.println(r.starting);[0m
-[0m[[0m[31merror[0m] [0m[0mD:\pla\Kora\Kora\app\services\reserveService.java:24:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   variable finishing[0m
-[0m[[0m[31merror[0m] [0m[0m  location: variable r of type models.reserved_slots[0m
-[0m[[0m[31merror[0m] [0m[0m    System.out.println(r.finishing);[0m
