@@ -17,9 +17,12 @@ public class ReserveApi extends Controller {
     JsonNode json = request().body().asJson();
     ReserveData reg= Json.fromJson(json, ReserveData.class);
     reserveService rs=new reserveService();
-    rs. reserveslot(reg);
+  reserved_slots t=  rs. reserveslot(reg);
     ObjectNode result = Json.newObject();
+    if (t!= null)
     result.put("statue", "success");
+    else
+    result.put("statue", "failed there is another reserve in this time");
     return ok(result);
   }
 }

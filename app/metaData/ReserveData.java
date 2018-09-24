@@ -1,12 +1,13 @@
 package metaData;
-import java.util.Date;
+import java.sql.Date;
+import java.sql.Time;
 import java.time.LocalTime;
 
 public class ReserveData  {
   public int SID;
   public int GID;
-  public String day;
-  public String starting;
-  public String finishing;
+  public Date day;
+  public Time starting;
+  public Time finishing;
 
 }

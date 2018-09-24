@@ -17,6 +17,6 @@ public class playground extends Model{
 		@JoinColumn(name = "CID")
 		public city c;
 		@OneToMany(mappedBy = "pg")
-		public ArrayList<reserved_slots> reserved_slot = new ArrayList<reserved_slots>();
+		public List<reserved_slots> reserved_slot ;
 		public static final Finder<Integer, playground> find = new Finder<>(playground.class);
 }
