@@ -74,8 +74,8 @@ create table team_members (
   tid                           integer,
   pid                           integer,
   role                          varchar(255),
-  c_acceptance                  tinyint(1) default 0,
-  p_acceptence                  tinyint(1) default 0
+  c_acceptance                  integer not null,
+  p_acceptence                  integer not null
 );
 
 create table teams (

@@ -14,7 +14,7 @@ public class team_members extends Model{
 			@JoinColumn(name = "PID")
 			public player play;
 			public String role;
-			public Boolean c_acceptance;
-			public Boolean p_acceptence;
+			public int c_acceptance;
+			public int p_acceptence;
 			public static final Finder<Integer, team_members> find = new Finder<>(team_members.class);
 }

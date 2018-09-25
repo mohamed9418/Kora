@@ -24,8 +24,8 @@ public class teamServices{
       captin.team=nTeam;
       captin.play=PS.p;
       captin.role="c";
-      captin.c_acceptance=true;
-      captin.p_acceptence=true;
+      captin.c_acceptance=1;
+      captin.p_acceptence=1;
       nTeam.save();
       captin.save();
       return nTeam;
