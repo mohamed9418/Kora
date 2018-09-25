@@ -1,4 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0mD:\pla\Kora\Kora\app\services\reserveService.java:29:1: cannot find symbol[0m
-[0m[[0m[31merror[0m] [0m[0m  symbol:   class ParseException[0m
-[0m[[0m[31merror[0m] [0m[0m  location: class services.reserveService[0m
-[0m[[0m[31merror[0m] [0m[0m   catch (ParseException e) {e.printStackTrace();[0m
