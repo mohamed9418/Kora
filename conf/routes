@@ -9,5 +9,6 @@ POST  /api/signIn                    controllers.playerApi.signIn
 POST  /api/active                    controllers.activationApi.activePlayer
 POST  /api/reserve                   controllers.ReserveApi.Reserve
 POST  /api/newTeam                   controllers.teamsApi.newTeam
+GET  /api/PlayGroundInfo/:SID          controllers.PlayGroundController.retrivePlayGround(SID : Integer)
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
