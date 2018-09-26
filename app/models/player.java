@@ -9,6 +9,7 @@ import java.sql.Blob;
  public class player extends Model{
    @Id
    public Integer PID;
+   public Integer screenID;
    public String name;
    public String email;
    public Blob pic;

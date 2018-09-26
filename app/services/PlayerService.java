@@ -21,6 +21,7 @@ public class PlayerService{
     n.email=rD.email;
     n.b_date=rD.b_date;
     n.activate=true;
+    n.screenID=Math.abs(rand.nextInt());
     n.save();
     return n;}
     catch(DataIntegrityException e){
@@ -53,6 +54,7 @@ public static List<RetrivedPlayerData> playerByName(String name){
     x.name=p.name;
     x.pic=p.pic;
     x.cityName=p.c.getName();
+    x.screenID=p.screenID;
     playerInfo.add(x);
   }
   return playerInfo;
