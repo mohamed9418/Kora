@@ -19,7 +19,7 @@ public class reserved_slots extends Model{
 			public player rPlayer;
 			public Date day;
 			public Time start_at;
-			public Time finish_at;
+			public int duration;
 			public int checked;
 			@OneToMany(mappedBy = "slots")
 			public ArrayList<challenges> ch = new ArrayList<challenges>();

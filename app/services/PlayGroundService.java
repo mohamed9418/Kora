@@ -17,7 +17,7 @@ public class PlayGroundService{
          pf.address=p.address;
          pf.phone_num=p.phone_num;
          pf.price=p.price;
-         pf.city=p.c.name;
+         pf.city=p.c.getName();
          pfI.add(pf);
        }
        return pfI;

@@ -8,6 +8,6 @@ public class ReserveData  {
   public int GID;
   public Date day;
   public Time starting;
-  public Time finishing;
+  public int duration;
 
 }

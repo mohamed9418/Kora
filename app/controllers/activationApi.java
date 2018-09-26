@@ -12,10 +12,9 @@ import services.ActiveService;
 public class activationApi extends Controller{
 
 public Result activePlayer(){
-  ActiveService c=new ActiveService();
   JsonNode json = request().body().asJson();
   int code = Integer.parseInt(json.findPath("code").textValue());
-  c.activePlayer(code);
+  ActiveService.activePlayer(code);
   ObjectNode result = Json.newObject();
   result.put("statue", "success");
   return ok(result);

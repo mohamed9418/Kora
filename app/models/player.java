@@ -4,13 +4,14 @@ import java.util.*;
 import io.ebean.*;
 import play.data.format.*;
 import play.data.validation.*;
+import java.sql.Blob;
 @Entity
  public class player extends Model{
    @Id
    public Integer PID;
    public String name;
    public String email;
-   public String pic;
+   public Blob pic;
    public Date b_date;
    public String pass;
    public boolean activate;
@@ -22,5 +23,8 @@ import play.data.validation.*;
    public ArrayList<sessions> mysessions = new ArrayList<sessions>();
    @OneToMany(mappedBy = "p")
    public ArrayList<activate> active = new ArrayList<activate>();
+   @ManyToOne
+   @JoinColumn(name = "CID")
+   public city c;
    public static Finder <Integer,player> find=new Finder<>(player.class);
  }

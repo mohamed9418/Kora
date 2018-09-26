@@ -1,11 +1,17 @@
 package services;
-import metaData.*;
-import models.*;
-import java.util.*;
+import metaData.RegisterData;
+import metaData.SignInData;
+import metaData.RetrivedPlayerData;
+import models.player;
+import models.sessions;
+import java.util.Random;
+import java.util.List;
+import java.util.ArrayList;
 import java.sql.SQLIntegrityConstraintViolationException;
+import java.util.Date;
 import io.ebean.DataIntegrityException ;
 public class PlayerService{
-  public player insertPlayeer(RegisterData rD){
+  public static player insertPlayeer(RegisterData rD){
     try{
     player n= new player();
     Random rand=new Random();
@@ -21,7 +27,7 @@ public class PlayerService{
       return null;
     }
   }
-  public sessions signedPlayer(SignInData si){
+  public static sessions signedPlayer(SignInData si){
     List<player> p= player.find.query().where().eq("email",si.email).findList();
     player x =p.get(0);
     Random rand=new Random();
@@ -39,4 +45,16 @@ public class PlayerService{
     }
     return null;
   }
+public static List<RetrivedPlayerData> playerByName(String name){
+  List<player> players= player.find.query().where().ilike("name","%"+name+"%").findList();
+  List<RetrivedPlayerData> playerInfo=new ArrayList<RetrivedPlayerData>(players.size());
+  RetrivedPlayerData x=new RetrivedPlayerData();
+  for (player p :players){
+    x.name=p.name;
+    x.pic=p.pic;
+    x.cityName=p.c.getName();
+    playerInfo.add(x);
+  }
+  return playerInfo;
+}
 }

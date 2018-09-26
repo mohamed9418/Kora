@@ -5,9 +5,12 @@ import play.libs.Json;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import models.*;
+import metaData.RegisterData;
+import metaData.SignInData;
+import metaData.RetrivedPlayerData;
 import java.util.*;
-import metaData.*;
+import models.player;
+import models.sessions;
 import services.PlayerService;
 import services.ActiveService;
 /**
@@ -25,16 +28,14 @@ public class playerApi extends Controller {
     public Result register() {
         JsonNode json = request().body().asJson();
         RegisterData reg= Json.fromJson(json, RegisterData.class);
-        PlayerService serv=new PlayerService();
-        player np=  serv.insertPlayeer(reg);
-        ActiveService ac= new ActiveService();
+        player np= PlayerService.insertPlayeer(reg);
         ObjectNode result = Json.newObject();
           if (np !=null){
           result.put("statue", "success");
           Mail mail =new Mail();
           Random rand=new Random();
           int x=Math.abs(rand.nextInt());
-          ac.insertToactivate(x,np);
+          ActiveService.insertToactivate(x,np);
           mail.setRecip(reg.email,String.valueOf(x));
           mail.run();
           result.put("email", "check your email");
@@ -48,8 +49,8 @@ public class playerApi extends Controller {
        String State="failed";
         JsonNode json = request().body().asJson();
         SignInData reg= Json.fromJson(json, SignInData.class);
-        PlayerService serv=new PlayerService();
-        sessions x = serv.signedPlayer(reg);
+
+        sessions x = PlayerService.signedPlayer(reg);
           ObjectNode result = Json.newObject();
         if (x!=null){
           result.put("name", x.p.name);
@@ -59,6 +60,17 @@ public class playerApi extends Controller {
 
         result.put("statue", State);
         return ok(result);
+    }
+    public Result searchPlayerByName(String name){
+      List<RetrivedPlayerData> pf=PlayerService.playerByName( name);
+      ObjectNode result = Json.newObject();
+     String state ="failed";
+      if (pf!= null){
+         state ="success";
+        result.put("Data", Json.toJson(pf));
+      }
+      result.put("statue", state);
+      return ok(result);
     }
 
 }
