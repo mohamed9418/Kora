@@ -34,10 +34,10 @@ create table player (
   pid                           integer auto_increment not null,
   name                          varchar(255),
   email                         varchar(255),
-  pic                           varchar(255),
   b_date                        datetime(6),
   pass                          varchar(255),
   activate                      tinyint(1) default 0 not null,
+  cid                           integer,
   constraint pk_player primary key (pid)
 );
 
@@ -57,7 +57,7 @@ create table reserved_slots (
   pid                           integer,
   day                           date,
   start_at                      time,
-  finish_at                     time,
+  duration                      integer not null,
   checked                       integer not null,
   constraint pk_reserved_slots primary key (rid)
 );
@@ -98,6 +98,9 @@ create index ix_challenges_tid on challenges (tid);
 alter table city add constraint fk_city_gid foreign key (gid) references government (gid) on delete restrict on update restrict;
 create index ix_city_gid on city (gid);
 
+alter table player add constraint fk_player_cid foreign key (cid) references city (cid) on delete restrict on update restrict;
+create index ix_player_cid on player (cid);
+
 alter table playground add constraint fk_playground_cid foreign key (cid) references city (cid) on delete restrict on update restrict;
 create index ix_playground_cid on playground (cid);
 
@@ -133,6 +136,9 @@ drop index ix_challenges_tid on challenges;
 
 alter table city drop foreign key fk_city_gid;
 drop index ix_city_gid on city;
+
+alter table player drop foreign key fk_player_cid;
+drop index ix_player_cid on player;
 
 alter table playground drop foreign key fk_playground_cid;
 drop index ix_playground_cid on playground;

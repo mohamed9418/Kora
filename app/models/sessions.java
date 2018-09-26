@@ -1,6 +1,6 @@
 package models;
 
-import java.util.*;
+import java.util.Date;
 import javax.persistence.*;
 
 import io.ebean.*;
