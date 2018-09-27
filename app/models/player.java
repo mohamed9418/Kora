@@ -9,6 +9,7 @@ import java.sql.Blob;
  public class player extends Model{
    @Id
    public Integer PID;
+   	@Column(name="screenID")
    public Integer screenID;
    public String name;
    public String email;
@@ -17,7 +18,10 @@ import java.sql.Blob;
    public String pass;
    public boolean activate;
    @OneToMany(mappedBy = "play")
-   public ArrayList<team_members> myTeam = new ArrayList<team_members>();
+   public List<team_members> myTeam ;
+   public List<team_members> getmyTeam(){
+     return myTeam;
+   }
    @OneToMany(mappedBy = " rPlayer")
    public ArrayList<reserved_slots> myReserve = new ArrayList<reserved_slots>();
    @OneToMany(mappedBy = "p")
