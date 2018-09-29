@@ -32,7 +32,7 @@ create table government (
 
 create table player (
   pid                           integer auto_increment not null,
-  screen_id                     integer,
+  screenid                      integer,
   name                          varchar(255),
   email                         varchar(255),
   b_date                        datetime(6),

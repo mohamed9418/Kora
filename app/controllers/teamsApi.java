@@ -8,6 +8,7 @@ import models.teams;
 import models.team_members;
 import metaData.newTeamData;
 import metaData.JoinReqData;
+import metaData.InviteData;
 import services.teamServices;
 import services.TeamMembersService;
 public class teamsApi extends Controller {
@@ -29,6 +30,16 @@ public class teamsApi extends Controller {
     result.put("statue", "wait for captin response");
   if(nMember == null)
     result.put("statue", "you are already send request");
+    return ok(result);
+  }
+  public Result invteToJoinTeam(){
+    JsonNode json = request().body().asJson();
+    InviteData joinData= Json.fromJson(json, InviteData.class);
+    ObjectNode result = Json.newObject();
+    team_members nMember=TeamMembersService.inviteReq(joinData);
+    result.put("statue", "wait for player response");
+  if(nMember == null)
+    result.put("statue", "you don't have the permisson to do that or you are already send the request");
     return ok(result);
   }
 }
