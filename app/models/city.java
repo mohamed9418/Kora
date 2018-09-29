@@ -10,9 +10,7 @@ public class city extends Model{
 	@Id @GeneratedValue
 	public Integer CID;
 	public String name;
-	public String getName() {
-		 return name;
- }
+
 	@ManyToOne
 	@JoinColumn(name = "GID")
 	public government govern;
@@ -23,4 +21,10 @@ public class city extends Model{
 	@OneToMany(mappedBy = "inCity")
 	public List<teams> cityTeam;
 	public static final Finder<Integer, city> find = new Finder<>(city.class);
+	public String getName() {
+		 return name;
+ }
+ public List<playground> getplaygrounds(){
+	 return playgrounds;
+ }
 }
