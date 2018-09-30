@@ -22,12 +22,12 @@ import java.sql.Blob;
    public List<team_members> getmyTeam(){
      return myTeam;
    }
-   @OneToMany(mappedBy = " rPlayer")
-   public ArrayList<reserved_slots> myReserve = new ArrayList<reserved_slots>();
+   @OneToMany(mappedBy = "rPlayer")
+   public List<reserved_slots> myReserve ;
    @OneToMany(mappedBy = "p")
-   public ArrayList<sessions> mysessions = new ArrayList<sessions>();
+   public List<sessions> mysessions;
    @OneToMany(mappedBy = "p")
-   public ArrayList<activate> active = new ArrayList<activate>();
+   public List<activate> active ;
    @ManyToOne
    @JoinColumn(name = "CID")
    public city c;

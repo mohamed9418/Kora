@@ -11,7 +11,8 @@ POST  /api/reserve                   controllers.ReserveApi.Reserve
 POST  /api/newTeam                   controllers.teamsApi.newTeam
 GET  /api/PlayGroundInfo             controllers.PlayGroundController.retrivePlayGround
 POST  /api/nMember                   controllers.teamsApi.joinTeam
-POST  /api/invite                   controllers.teamsApi.invteToJoinTeam
+POST  /api/invite                    controllers.teamsApi.invteToJoinTeam
+POST  /api/newChallange              controllers.ChallangeController.newChallange
 GET   /api/playername/:name          controllers.playerApi.searchPlayerByName(name : String)
 GET   /api/citiesName                controllers.CityController.getcitiesName
 GET   /api/PlayGroundInfo/:cityName  controllers.PlayGroundController.retrivePlayGroundByCity(cityName : String)

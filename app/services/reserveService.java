@@ -8,7 +8,7 @@ import java.sql.Time;
 import java.sql.Date;
 import io.ebean.DataIntegrityException ;
 public class reserveService{
- public boolean checkvalid(playground p,Time start_at,int duration,Date day){
+ public static boolean checkvalid(playground p,Time start_at,int duration,Date day){
    List<reserved_slots> pgSlotst= p.reserved_slot;
    Time start;
    Time finish;
@@ -28,7 +28,7 @@ public class reserveService{
    }
    return true;
  }
-  public reserved_slots reserveslot(ReserveData data){
+  public static reserved_slots reserveslot(ReserveData data){
     sessions s= sessions.find.byId(data.SID);
     playground p=playground.find.byId(data.GID);
     reserved_slots r= new reserved_slots();
