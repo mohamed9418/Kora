@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:D:/pla/Kora/Kora/conf/routes
-// @DATE:Thu Sep 27 14:49:30 EET 2018
+// @SOURCE:F:/pla/app1/kora/conf/routes
+// @DATE:Sat Sep 29 14:52:39 EET 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -11,7 +11,7 @@ import _root_.play.libs.F
 // @LINE:6
 package controllers.javascript {
 
-  // @LINE:17
+  // @LINE:19
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -19,7 +19,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:17
+    // @LINE:19
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -39,12 +39,42 @@ package controllers.javascript {
     }
 
   
+    // @LINE:17
+    def retrivePlayGroundByCity: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.PlayGroundController.retrivePlayGroundByCity",
+      """
+        function(cityName0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/PlayGroundInfo/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("cityName", cityName0))})
+        }
+      """
+    )
+  
     // @LINE:12
     def retrivePlayGround: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.PlayGroundController.retrivePlayGround",
       """
-        function(SID0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/PlayGroundInfo/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Integer]].javascriptUnbind + """)("SID", SID0))})
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/PlayGroundInfo"})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:16
+  class ReverseCityController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:16
+    def getcitiesName: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CityController.getcitiesName",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "api/citiesName"})
         }
       """
     )

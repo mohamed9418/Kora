@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:D:/pla/Kora/Kora/conf/routes
-// @DATE:Thu Sep 27 14:49:30 EET 2018
+// @SOURCE:F:/pla/app1/kora/conf/routes
+// @DATE:Sat Sep 29 14:52:39 EET 2018
 
 package router
 
@@ -19,15 +19,17 @@ class Routes(
   // @LINE:7
   playerApi_3: controllers.playerApi,
   // @LINE:9
-  activationApi_6: controllers.activationApi,
+  activationApi_7: controllers.activationApi,
   // @LINE:10
-  ReserveApi_4: controllers.ReserveApi,
+  ReserveApi_5: controllers.ReserveApi,
   // @LINE:11
   teamsApi_1: controllers.teamsApi,
   // @LINE:12
   PlayGroundController_2: controllers.PlayGroundController,
-  // @LINE:17
-  Assets_5: controllers.Assets,
+  // @LINE:16
+  CityController_4: controllers.CityController,
+  // @LINE:19
+  Assets_6: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
 
@@ -38,20 +40,22 @@ class Routes(
     // @LINE:7
     playerApi_3: controllers.playerApi,
     // @LINE:9
-    activationApi_6: controllers.activationApi,
+    activationApi_7: controllers.activationApi,
     // @LINE:10
-    ReserveApi_4: controllers.ReserveApi,
+    ReserveApi_5: controllers.ReserveApi,
     // @LINE:11
     teamsApi_1: controllers.teamsApi,
     // @LINE:12
     PlayGroundController_2: controllers.PlayGroundController,
-    // @LINE:17
-    Assets_5: controllers.Assets
-  ) = this(errorHandler, HomeController_0, playerApi_3, activationApi_6, ReserveApi_4, teamsApi_1, PlayGroundController_2, Assets_5, "/")
+    // @LINE:16
+    CityController_4: controllers.CityController,
+    // @LINE:19
+    Assets_6: controllers.Assets
+  ) = this(errorHandler, HomeController_0, playerApi_3, activationApi_7, ReserveApi_5, teamsApi_1, PlayGroundController_2, CityController_4, Assets_6, "/")
 
   def withPrefix(prefix: String): Routes = {
     router.RoutesPrefix.setPrefix(prefix)
-    new Routes(errorHandler, HomeController_0, playerApi_3, activationApi_6, ReserveApi_4, teamsApi_1, PlayGroundController_2, Assets_5, prefix)
+    new Routes(errorHandler, HomeController_0, playerApi_3, activationApi_7, ReserveApi_5, teamsApi_1, PlayGroundController_2, CityController_4, Assets_6, prefix)
   }
 
   private[this] val defaultPrefix: String = {
@@ -65,10 +69,12 @@ class Routes(
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/active""", """controllers.activationApi.activePlayer"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/reserve""", """controllers.ReserveApi.Reserve"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/newTeam""", """controllers.teamsApi.newTeam"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/PlayGroundInfo/""" + "$" + """SID<[^/]+>""", """controllers.PlayGroundController.retrivePlayGround(SID:Integer)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/PlayGroundInfo""", """controllers.PlayGroundController.retrivePlayGround"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/nMember""", """controllers.teamsApi.joinTeam"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/invite""", """controllers.teamsApi.invteToJoinTeam"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/playername/""" + "$" + """name<[^/]+>""", """controllers.playerApi.searchPlayerByName(name:String)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/citiesName""", """controllers.CityController.getcitiesName"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """api/PlayGroundInfo/""" + "$" + """cityName<[^/]+>""", """controllers.PlayGroundController.retrivePlayGroundByCity(cityName:String)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -136,7 +142,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/active")))
   )
   private[this] lazy val controllers_activationApi_activePlayer3_invoker = createInvoker(
-    activationApi_6.activePlayer,
+    activationApi_7.activePlayer,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.activationApi",
@@ -154,7 +160,7 @@ class Routes(
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/reserve")))
   )
   private[this] lazy val controllers_ReserveApi_Reserve4_invoker = createInvoker(
-    ReserveApi_4.Reserve,
+    ReserveApi_5.Reserve,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.ReserveApi",
@@ -187,17 +193,17 @@ class Routes(
 
   // @LINE:12
   private[this] lazy val controllers_PlayGroundController_retrivePlayGround6_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/PlayGroundInfo/"), DynamicPart("SID", """[^/]+""",true)))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/PlayGroundInfo")))
   )
   private[this] lazy val controllers_PlayGroundController_retrivePlayGround6_invoker = createInvoker(
-    PlayGroundController_2.retrivePlayGround(fakeValue[Integer]),
+    PlayGroundController_2.retrivePlayGround,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.PlayGroundController",
       "retrivePlayGround",
-      Seq(classOf[Integer]),
+      Nil,
       "GET",
-      this.prefix + """api/PlayGroundInfo/""" + "$" + """SID<[^/]+>""",
+      this.prefix + """api/PlayGroundInfo""",
       """""",
       Seq()
     )
@@ -257,12 +263,48 @@ class Routes(
     )
   )
 
+  // @LINE:16
+  private[this] lazy val controllers_CityController_getcitiesName10_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/citiesName")))
+  )
+  private[this] lazy val controllers_CityController_getcitiesName10_invoker = createInvoker(
+    CityController_4.getcitiesName,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.CityController",
+      "getcitiesName",
+      Nil,
+      "GET",
+      this.prefix + """api/citiesName""",
+      """""",
+      Seq()
+    )
+  )
+
   // @LINE:17
-  private[this] lazy val controllers_Assets_versioned10_route = Route("GET",
+  private[this] lazy val controllers_PlayGroundController_retrivePlayGroundByCity11_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("api/PlayGroundInfo/"), DynamicPart("cityName", """[^/]+""",true)))
+  )
+  private[this] lazy val controllers_PlayGroundController_retrivePlayGroundByCity11_invoker = createInvoker(
+    PlayGroundController_2.retrivePlayGroundByCity(fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.PlayGroundController",
+      "retrivePlayGroundByCity",
+      Seq(classOf[String]),
+      "GET",
+      this.prefix + """api/PlayGroundInfo/""" + "$" + """cityName<[^/]+>""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:19
+  private[this] lazy val controllers_Assets_versioned12_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned10_invoker = createInvoker(
-    Assets_5.versioned(fakeValue[String], fakeValue[Asset]),
+  private[this] lazy val controllers_Assets_versioned12_invoker = createInvoker(
+    Assets_6.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Assets",
@@ -299,13 +341,13 @@ class Routes(
     // @LINE:9
     case controllers_activationApi_activePlayer3_route(params@_) =>
       call { 
-        controllers_activationApi_activePlayer3_invoker.call(activationApi_6.activePlayer)
+        controllers_activationApi_activePlayer3_invoker.call(activationApi_7.activePlayer)
       }
   
     // @LINE:10
     case controllers_ReserveApi_Reserve4_route(params@_) =>
       call { 
-        controllers_ReserveApi_Reserve4_invoker.call(ReserveApi_4.Reserve)
+        controllers_ReserveApi_Reserve4_invoker.call(ReserveApi_5.Reserve)
       }
   
     // @LINE:11
@@ -316,8 +358,8 @@ class Routes(
   
     // @LINE:12
     case controllers_PlayGroundController_retrivePlayGround6_route(params@_) =>
-      call(params.fromPath[Integer]("SID", None)) { (SID) =>
-        controllers_PlayGroundController_retrivePlayGround6_invoker.call(PlayGroundController_2.retrivePlayGround(SID))
+      call { 
+        controllers_PlayGroundController_retrivePlayGround6_invoker.call(PlayGroundController_2.retrivePlayGround)
       }
   
     // @LINE:13
@@ -338,10 +380,22 @@ class Routes(
         controllers_playerApi_searchPlayerByName9_invoker.call(playerApi_3.searchPlayerByName(name))
       }
   
+    // @LINE:16
+    case controllers_CityController_getcitiesName10_route(params@_) =>
+      call { 
+        controllers_CityController_getcitiesName10_invoker.call(CityController_4.getcitiesName)
+      }
+  
     // @LINE:17
-    case controllers_Assets_versioned10_route(params@_) =>
+    case controllers_PlayGroundController_retrivePlayGroundByCity11_route(params@_) =>
+      call(params.fromPath[String]("cityName", None)) { (cityName) =>
+        controllers_PlayGroundController_retrivePlayGroundByCity11_invoker.call(PlayGroundController_2.retrivePlayGroundByCity(cityName))
+      }
+  
+    // @LINE:19
+    case controllers_Assets_versioned12_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned10_invoker.call(Assets_5.versioned(path, file))
+        controllers_Assets_versioned12_invoker.call(Assets_6.versioned(path, file))
       }
   }
 }

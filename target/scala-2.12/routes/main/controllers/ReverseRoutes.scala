@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:D:/pla/Kora/Kora/conf/routes
-// @DATE:Thu Sep 27 14:49:30 EET 2018
+// @SOURCE:F:/pla/app1/kora/conf/routes
+// @DATE:Sat Sep 29 14:52:39 EET 2018
 
 import play.api.mvc.Call
 
@@ -11,14 +11,14 @@ import _root_.play.libs.F
 // @LINE:6
 package controllers {
 
-  // @LINE:17
+  // @LINE:19
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:17
+    // @LINE:19
     def versioned(file:Asset): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))
@@ -33,10 +33,31 @@ package controllers {
     }
 
   
-    // @LINE:12
-    def retrivePlayGround(SID:Integer): Call = {
+    // @LINE:17
+    def retrivePlayGroundByCity(cityName:String): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "api/PlayGroundInfo/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Integer]].unbind("SID", SID)))
+      Call("GET", _prefix + { _defaultPrefix } + "api/PlayGroundInfo/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("cityName", cityName)))
+    }
+  
+    // @LINE:12
+    def retrivePlayGround(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "api/PlayGroundInfo")
+    }
+  
+  }
+
+  // @LINE:16
+  class ReverseCityController(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:16
+    def getcitiesName(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "api/citiesName")
     }
   
   }

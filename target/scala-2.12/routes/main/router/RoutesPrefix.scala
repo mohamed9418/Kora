@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:D:/pla/Kora/Kora/conf/routes
-// @DATE:Thu Sep 27 14:49:30 EET 2018
+// @SOURCE:F:/pla/app1/kora/conf/routes
+// @DATE:Sat Sep 29 14:52:39 EET 2018
 
 
 package router {

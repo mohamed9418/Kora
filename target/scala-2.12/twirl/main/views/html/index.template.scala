@@ -51,8 +51,8 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Thu Sep 27 14:49:31 EET 2018
-                  SOURCE: D:/pla/Kora/Kora/app/views/index.scala.html
+                  DATE: Sat Sep 29 14:52:39 EET 2018
+                  SOURCE: F:/pla/app1/kora/app/views/index.scala.html
                   HASH: e7b67f9143e77fd41846670f700f7278d5705eda
                   MATRIX: 941->1|1037->3|1067->8|1098->31|1137->33|1167->37|1224->65
                   LINES: 28->1|33->1|35->3|35->3|35->3|36->4|37->5
