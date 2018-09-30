@@ -17,4 +17,7 @@ public class team_members extends Model{
 			public int c_acceptance;
 			public int p_acceptence;
 			public static final Finder<Integer, team_members> find = new Finder<>(team_members.class);
+			public teams getTeam(){
+				return team;
+			}
 }
