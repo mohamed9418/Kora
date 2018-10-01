@@ -13,11 +13,12 @@ public class challenges extends Model{
 			@JoinColumn(name = "RID")
 			public reserved_slots slots;
 			@ManyToOne
-			@JoinColumn(name = "TID")
+			@JoinColumn(name = "InvTeam")
 			public teams invTeam;
 			@ManyToOne
-			@JoinColumn(name = "TID")
+			@JoinColumn(name = "chTeam")
 			public teams chTeam;
+			@Column(name="teamAcceptance")
 			public Boolean teamAcceptance;
 			public static final Finder<Integer, challenges> find = new Finder<>(challenges.class);
 			}
