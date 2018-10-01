@@ -4,7 +4,7 @@
 		module="kora-build"
 		revision="0.1.0-SNAPSHOT"
 		status="integration"
-		publication="20180929145003"
+		publication="20181001094605"
 		e:sbtVersion="1.0" e:scalaVersion="2.12"
 	>
 		<description>

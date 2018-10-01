@@ -15,10 +15,20 @@ public class teams extends Model{
 			public city inCity;
 			public Boolean traveling;
 			@OneToMany(mappedBy = "invTeam")
-			public ArrayList<challenges> chByMe = new ArrayList<challenges>();
+			public List<challenges> chByMe ;
 			@OneToMany(mappedBy = "chTeam")
-			public ArrayList<challenges> chByO = new ArrayList<challenges>();
+			public List<challenges> chByO ;
 			@OneToMany(mappedBy = "team")
-			public ArrayList<team_members> members = new ArrayList<team_members>();
+			public List<team_members> members ;
 			public static final Finder<Integer, teams> find = new Finder<>(teams.class);
+			public List<challenges> getchByMe(){
+				return chByMe;
+			}
+			public List<challenges> getchByO(){
+				return chByO;
+			}
+			public List<team_members> getTeammembers(){
+				return members;
+			}
+
 			}

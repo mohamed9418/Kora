@@ -16,5 +16,6 @@ POST  /api/newChallange              controllers.ChallangeController.newChallang
 GET   /api/playername/:name          controllers.playerApi.searchPlayerByName(name : String)
 GET   /api/citiesName                controllers.CityController.getcitiesName
 GET   /api/PlayGroundInfo/:cityName  controllers.PlayGroundController.retrivePlayGroundByCity(cityName : String)
+POST  /api/getMyRequests              controllers.NotifictionController.getNotificiton
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

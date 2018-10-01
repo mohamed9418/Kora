@@ -52,4 +52,15 @@ public class TeamMembersService{
         }
         return null;
   }
+  public static team_members addCaptin(player Captin,teams cTeam){
+    team_members captin =new team_members();
+    captin.team=cTeam;
+    captin.play=Captin;
+    captin.role="c";
+    captin.c_acceptance=1;
+    captin.p_acceptence=1;
+    captin.save();
+    return captin;
+
+  }
 }

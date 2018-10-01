@@ -2,14 +2,18 @@ package services;
 import metaData.RegisterData;
 import metaData.SignInData;
 import metaData.RetrivedPlayerData;
+import metaData.NotificationData;
 import models.player;
 import models.sessions;
+import models.team_members;
 import java.util.Random;
 import java.util.List;
 import java.util.ArrayList;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.Date;
 import io.ebean.DataIntegrityException ;
+import io.ebean.Ebean;
+
 public class PlayerService{
   public static player insertPlayeer(RegisterData rD){
     try{
@@ -58,5 +62,31 @@ public static List<RetrivedPlayerData> playerByName(String name){
     playerInfo.add(x);
   }
   return playerInfo;
+}
+public static List<NotificationData> getMyRequest(int SID){
+    List<NotificationData> notification= new ArrayList<>();
+  sessions s= sessions.find.byId(SID) ;
+  player p = s.p ;
+  List<team_members> myTeams= Ebean.find(team_members.class)
+                  .where()
+                  .eq("PID",p.PID)
+                  .findList();
+int invitCount = 0 ;
+int joinRequestData = 0;
+for (team_members tm:myTeams){
+  if(tm.c_acceptance==1 && tm.p_acceptence==0)
+  invitCount++;
+  if(tm.c_acceptance==0 && tm.p_acceptence==1)
+  joinRequestData++;
+}
+NotificationData teamNot=new NotificationData();
+teamNot.name="waiting requests";
+teamNot.count = invitCount ;
+notification.add(teamNot);
+teamNot.name="invition for me";
+teamNot.count = joinRequestData ;
+notification.add(teamNot);
+return notification;
+
 }
 }
