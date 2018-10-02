@@ -17,5 +17,7 @@ GET   /api/playername/:name          controllers.playerApi.searchPlayerByName(na
 GET   /api/citiesName                controllers.CityController.getcitiesName
 GET   /api/PlayGroundInfo/:cityName  controllers.PlayGroundController.retrivePlayGroundByCity(cityName : String)
 POST  /api/getMyRequests              controllers.NotifictionController.getNotificiton
+POST  /api/myResponse                 controllers.ResponseController.responedTo
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

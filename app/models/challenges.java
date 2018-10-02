@@ -19,6 +19,6 @@ public class challenges extends Model{
 			@JoinColumn(name = "chTeam")
 			public teams chTeam;
 			@Column(name="teamAcceptance")
-			public Boolean teamAcceptance;
+			public int teamAcceptance;
 			public static final Finder<Integer, challenges> find = new Finder<>(challenges.class);
 			}

@@ -72,6 +72,7 @@ public static List<NotificationData> getMyRequest(int SID){
                   .eq("PID",p.PID)
                   .findList();
 int invitCount = 0 ;
+  System.out.println(myTeams.size());
 int joinRequestData = 0;
 for (team_members tm:myTeams){
   if(tm.c_acceptance==1 && tm.p_acceptence==0)
@@ -79,14 +80,14 @@ for (team_members tm:myTeams){
   if(tm.c_acceptance==0 && tm.p_acceptence==1)
   joinRequestData++;
 }
-NotificationData teamNot=new NotificationData();
-teamNot.name="waiting requests";
-teamNot.count = invitCount ;
-notification.add(teamNot);
-teamNot.name="invition for me";
-teamNot.count = joinRequestData ;
-notification.add(teamNot);
+  System.out.println(invitCount);
+notification.add(new NotificationData("waiting requests",invitCount));
+notification.add(new NotificationData("invition for me",joinRequestData));
 return notification;
 
+}
+public static player findPlayerBySID(int SID){
+  player p= sessions.find.byId(SID).p;
+  return p;
 }
 }

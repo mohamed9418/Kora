@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.sql.SQLIntegrityConstraintViolationException;
 import io.ebean.DataIntegrityException ;
-import io.ebean.*;
+import io.ebean.Ebean;
 
 public class teamServices{
   public static teams newTeam(newTeamData nData){
@@ -47,12 +47,8 @@ public class teamServices{
     NotificationData teamNot=new NotificationData();
     if (tm != null){
     teams playerTeam=tm.getTeam();
-      teamNot.name="my Challnges Requests";
-      teamNot.count=playerTeam.getchByMe().size();
-      notification.add(teamNot);
-      teamNot.name="other Challnges Requests";
-      teamNot.count=playerTeam.getchByO().size();
-      notification.add(teamNot);
+      notification.add(new NotificationData("my Challnges Requests",playerTeam.getchByMe().size()));
+      notification.add(new NotificationData("other Challnges Requests",playerTeam.getchByO().size()));
       int countRequest = 0 ;
       int countInvite = 0 ;
       for (team_members tx:playerTeam.getTeammembers()){
@@ -61,12 +57,10 @@ public class teamServices{
          if(tm.p_acceptence==0)
          countInvite++;
       }
-      teamNot.name="join to Team Requests";
-      teamNot.count = countRequest ;
-      notification.add(teamNot);
+      notification.add(new NotificationData("join to Team Requests",countRequest));
       teamNot.name="invite to Team Requests";
       teamNot.count = countInvite ;
-      notification.add(teamNot);
+      notification.add(new NotificationData("invite to Team Requests",countInvite));
 
   }
     else {

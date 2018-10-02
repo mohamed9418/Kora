@@ -14,7 +14,7 @@ create table challenges (
   rid                           integer,
   invteam                       integer,
   chteam                        integer,
-  teamacceptance                tinyint(1) default 0,
+  teamacceptance                integer not null,
   constraint pk_challenges primary key (cid)
 );
 
